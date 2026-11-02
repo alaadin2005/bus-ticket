@@ -104,3 +104,7 @@ systemctl --no-pager --full status tomcat || true
 echo
 echo "Local HTTP check:"
 curl -sS -o /dev/null -w 'HTTP %{http_code}\n' http://127.0.0.1:8080 || true
+
+sudo firewall-cmd --permanent --add-port=8080/tcp
+sudo firewall-cmd --reload
+
